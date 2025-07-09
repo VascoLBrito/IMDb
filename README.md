@@ -6,7 +6,7 @@ Demonstra competências em ETL, análise exploratória, visualização interativ
 
 ---
 
-## 📊 Funcionalidades
+## Funcionalidades
 
 - Visualização da avaliação média por género (desde 2000)
 - Ranking dos filmes mais bem avaliados de todos os tempos
@@ -16,7 +16,7 @@ Demonstra competências em ETL, análise exploratória, visualização interativ
 
 ---
 
-## 🧠 Tecnologias usadas
+## Tech Stack
 
 - **Python**  
 - **Pandas**  
@@ -24,28 +24,11 @@ Demonstra competências em ETL, análise exploratória, visualização interativ
 - **Plotly**  
 - **IMDb Datasets (.tsv)**
 
----
-
-## 📦 Estrutura do Projeto
-
-imdb-analysis/
-├── app/
-│ └── streamlit_app.py # App principal
-├── src/
-│ ├── etl.py # Carregamento e tratamento de dados
-│ ├── analysis.py # Lógicas analíticas
-│ ├── visualizations.py # Gráficos (Plotly)
-├── data/ # Ficheiros .tsv da IMDb
-├── requirements.txt
-└── README.md
-
----
-
 ## Como correr localmente
 
 ### Clonar o repositório
 
-git clone <https://github.com/seu-username/imdb-analysis.git>
+git clone <https://github.com/VascoLBrito/IMDb.git>
 cd imdb-analysis
 
 ### Criar e ativar o ambiente virtual

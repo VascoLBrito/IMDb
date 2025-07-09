@@ -1,8 +1,17 @@
+import os
 import pandas as pd
 import streamlit as st
 
+def running_on_streamlit_cloud():
+    return os.environ.get("STREAMLIT_CLOUD", False)
+
 @st.cache_data
-def load_title_basics(path="data/title.basics.tsv.gz"):
+def load_title_basics():
+    path = (
+        "data/title.basics.sample.tsv"
+        if running_on_streamlit_cloud()
+        else "data/title.basics.tsv.gz"
+    )
     df = pd.read_csv(path, sep="\t", na_values="\\N", low_memory=False)
     df = df[df['titleType'] == 'movie']
     df = df[df['startYear'].notna()]
@@ -10,7 +19,12 @@ def load_title_basics(path="data/title.basics.tsv.gz"):
     return df
 
 @st.cache_data
-def load_ratings(path="data/title.ratings.tsv.gz"):
+def load_ratings():
+    path = (
+        "data/title.ratings.sample.tsv"
+        if running_on_streamlit_cloud()
+        else "data/title.ratings.tsv.gz"
+    )
     return pd.read_csv(path, sep="\t", na_values="\\N", low_memory=False)
 
 @st.cache_data
