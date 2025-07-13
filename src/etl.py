@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 
 def running_on_streamlit_cloud():
-    return os.environ.get("STREAMLIT_CLOUD", False)
+    return os.environ.get("STREAMLIT_CLOUD", "").lower() == "true"
 
 @st.cache_data
 def load_title_basics():
