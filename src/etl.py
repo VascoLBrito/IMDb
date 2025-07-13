@@ -3,8 +3,7 @@ import pandas as pd
 import streamlit as st
 
 def running_on_streamlit_cloud():
-    value = os.environ.get("STREAMLIT_CLOUD", "")
-    return str(value).lower() == "true"
+    return True  # ← forçar uso de ficheiros sample em todo o lado
 
 
 @st.cache_data
