@@ -23,7 +23,8 @@ def top_genres_by_rating(merged_df, min_votes=5000):
 def top_movies_by_rating(merged_df, min_votes=50000, top_n=10):
     df = merged_df[merged_df['numVotes'] >= min_votes]
     top = df.sort_values(by='averageRating', ascending=False).head(top_n)
-    return top[['Titulo', 'Ano', 'Media Pontuação', 'Número de Votos']]
+    return top[['primaryTitle', 'startYear', 'averageRating', 'numVotes']]
+
 
 #Retorna os top N filmes com mais votos (indicador de popularidade).
 def most_voted_movies(merged_df, top_n=10):

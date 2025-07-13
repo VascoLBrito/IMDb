@@ -36,14 +36,13 @@ def load_data():
     ratings = load_ratings()
     return merge_basics_ratings(basics, ratings)
 
-# Centered loading screen
-with st.spinner("A carregar dados do IMDb..."):
-    df = load_data()
-
 # Page: Géneros
 
-
 if page == "Géneros por Avaliação":
+
+    with st.spinner("A carregar dados do IMDb..."):
+      df = load_data()
+
     col1, col2, col3 = st.columns(3)
 
     with col1:
@@ -65,6 +64,10 @@ if page == "Géneros por Avaliação":
 
 # Page: Top Filmes
 elif page == "Top Filmes por Avaliação":
+
+    with st.spinner("A carregar dados do IMDb..."):
+      df = load_data()
+
     min_votes_2 = st.slider("Votos mínimos por filme", 1000, 2000000, 100000, step=10000)
     st.subheader(f"Top 10 Filmes Mais Bem Avaliados (min {min_votes_2} votos)")
     top_rated = top_movies_by_rating(df, min_votes=min_votes_2)
@@ -76,6 +79,10 @@ elif page == "Top Filmes por Avaliação":
 
 # Page: Mais Votados
 elif page == "Filmes Mais Votados":
+
+    with st.spinner("A carregar dados do IMDb..."):
+      df = load_data()
+
     st.subheader("Top 10 Filmes Mais Votados")
     most_voted = most_voted_movies(df)
     fig = plot_top_rated_movies(most_voted)
@@ -83,6 +90,10 @@ elif page == "Filmes Mais Votados":
 
 # Page: Recomendador
 elif page == "Recomendador de Filmes":
+
+    with st.spinner("A carregar dados do IMDb..."):
+      df = load_data()
+
     st.subheader("Recomendador por Género")
     all_genres = df['genres'].dropna().str.split(',').explode().unique()
     genre = st.selectbox("Escolhe um género:", sorted(all_genres))
