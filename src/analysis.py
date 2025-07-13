@@ -15,6 +15,7 @@ def top_genres_by_rating(merged_df, min_votes=5000):
         exploded.groupby('genres')['averageRating']
         .mean()
         .sort_values(ascending=False)
+        
     )
     return genre_avg
 
