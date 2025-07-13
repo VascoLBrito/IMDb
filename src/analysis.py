@@ -15,13 +15,13 @@ def top_genres_by_rating(merged_df, min_votes=5000):
         exploded.groupby('genres')['averageRating']
         .mean()
         .sort_values(ascending=False)
-        
+
     )
     return genre_avg
 
 
 #Devolve os top N filmes com melhor avaliação média e número mínimo de votos
-def top_movies_by_rating(merged_df, min_votes=50000, top_n=10):
+def top_movies_by_rating(merged_df, min_votes=1500000, top_n=10):
     df = merged_df[merged_df['numVotes'] >= min_votes]
     top = df.sort_values(by='averageRating', ascending=False).head(top_n)
     return top[['primaryTitle', 'startYear', 'averageRating', 'numVotes']]

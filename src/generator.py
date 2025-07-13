@@ -19,7 +19,7 @@ df = df[df['numVotes'] >= 50000]
 df = df.sort_values(by=['averageRating', 'numVotes'], ascending=False)
 
 # Select top N
-TOP_N = 500
+TOP_N = 5000
 df_top = df.head(TOP_N)
 
 # Create minimal basics and ratings samples
