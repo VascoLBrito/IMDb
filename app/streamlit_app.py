@@ -97,7 +97,7 @@ elif page == "Recomendador de Filmes":
     st.subheader("Recomendador por Género")
     all_genres = df['genres'].dropna().str.split(',').explode().unique()
     genre = st.selectbox("Escolhe um género:", sorted(all_genres))
-    min_votes_rec = st.slider("Número mínimo de votos:", 1000, 50000, 10000, step=1000)
+    min_votes_rec = st.slider("Número mínimo de votos:", 1000000, 2000000, 100000, step=1000)
 
     recommendations = recommend_movies_by_genre(df, genre, min_votes=min_votes_rec)
 
