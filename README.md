@@ -24,6 +24,10 @@ Demonstra competências em ETL, análise exploratória, visualização interativ
 - **Plotly**  
 - **IMDb Datasets (.tsv)**
 
+## Visita Rápida
+
+visitar <https://kqqmqnyznah7npku7rkxci.streamlit.app>
+
 ## Como correr localmente
 
 ### Clonar o repositório
@@ -51,4 +55,4 @@ streamlit run app/streamlit_app.py
 
 ### Bse de Dados
 
-Este projeto utiliza os datasets públicos da IMDb que estão presentes na pasta "data"
+Este projeto tem presente uma sample de uma dataset pública da IMDb, e é usada na app streamlit, esta foi produzida através do script generator.py com base no dataset original.
